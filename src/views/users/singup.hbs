@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Registro de usuarios
+            </div>
+            <div class="card-body">
+                <form action="/users/singup" method="post">
+                    <div class="form-group">
+                        <input class="form-control mb-2" type="text" name="nombre" placeholder="Introdusca su nombre" value="{{ nombre }}">
+                        <input class="form-control mb-2" type="email" name="email" placeholder="Introdusca su email" value="{{ email }}">
+                        <input class="form-control mb-2" type="password" name="password" placeholder="Introdusca su contraseña" value="{{ password }}">
+                        <input class="form-control mb-2" type="password" name="password_confirm" placeholder="Confirme la contraseña" value="{{ password_confirm }}">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

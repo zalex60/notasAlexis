@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-12 col-md-6">
+            <div class="navbar-nav me-auto ms-4 mb-4">
+                <form class="d-flex" method="POST" action="/notes/search">
+                    <input class="form-control me-sm-2" type="text" placeholder="Buscar notas" name="search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+        {{#if search}}
+        <div class="col-12 col-md-6">
+            <div class="navbar-nav ms-auto ms-4 mb-4">
+                <h5>Resultados de la búsqueda: <span class="badge bg-secondary">{{search}}</span></h5>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    {{#if search}}
+    <div class="row">
+        {{#each notes}}
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center">
+                        {{titulo}}
+                    </h4>
+                    <hr>
+                    <p>{{descripcion}}</p>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title">No hay resultados...</h4>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
